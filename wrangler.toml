@@ -1,0 +1,19 @@
+name = "mini-tds"
+main = "src/worker.ts"
+compatibility_date = "2024-11-01"
+
+# Sample routes binding. Delete or replace with your own mapping.
+# routes = [
+#   { pattern = "example.com/*", zone_name = "example.com" }
+# ]
+
+[[kv_namespaces]]
+binding = "CONFIG"
+id = "8ddfc8564e4847c3b3f8f1561c437a01"
+
+[[kv_namespaces]]
+binding = "AUDIT"
+id = "937b14169c0447c8baceb07cffa3ad8c"
+
+# Before deploying create the admin token secret:
+#   npx wrangler secret put ADMIN_TOKEN

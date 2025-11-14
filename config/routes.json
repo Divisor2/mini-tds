@@ -1,0 +1,41 @@
+[
+  {
+    "id": "rule-ru-mobile-casino",
+    "enabled": true,
+    "match": {
+      "path": "^/casino/([^/?#]+)",
+      "countries": ["RU"],
+      "devices": ["mobile"],
+      "bots": false
+    },
+    "action": {
+      "type": "redirect",
+      "target": "https://2win.click/tds/go.cgi?4",
+      "query": {
+        "bonus": { "fromPathGroup": 1 }
+      },
+      "status": 302,
+      "preserveOriginalQuery": false,
+      "extraQuery": {
+        "src": "mobile-geo"
+      },
+      "appendCountry": true,
+      "appendDevice": true
+    }
+  },
+  {
+    "id": "bots-white",
+    "enabled": true,
+    "match": {
+      "bots": true
+    },
+    "action": {
+      "type": "response",
+      "status": 200,
+      "headers": {
+        "Content-Type": "text/html; charset=utf-8"
+      },
+      "bodyHtml": "<!doctype html><title>OK</title><h1>Site is fine</h1>"
+    }
+  }
+]
